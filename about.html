@@ -1,313 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Purnima Adhikari • Portfolio</title>
-  <meta name="description" content="High school student portfolio: projects in AI/ML, Cybersecurity, and Data Science, alongside awards, extracurriculars, and personal statement." />
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About • Purnima Adhikari</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b1020; --surface:#0f1630; --card:#111937; --muted:#9bb0df; --ink:#f2f6ff; --accent:#64b5ff; --accent-2:#9effc7; --ring:#2b3a66;
-      --max: 960px; --radius:16px; --space-1:6px; --space-2:10px; --space-3:16px; --space-4:24px; --space-5:36px; --space-6:56px; --space-7:84px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 10% -10%, #13204a 0%, rgba(11,16,32,0) 60%),radial-gradient(800px 600px at 100% 10%, #0f243a 0%, rgba(11,16,32,0) 60%),var(--bg);color:var(--ink);line-height:1.6}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:var(--max);margin:0 auto;padding:0 var(--space-4)}
-
-    /* Header + sticky subnav */
-    header{position:sticky;top:0;background:linear-gradient(180deg, rgba(11,16,32,0.95), rgba(11,16,32,0.75));backdrop-filter:saturate(140%) blur(6px);z-index:50;border-bottom:1px solid #1a2240}
-    .topbar{display:flex;gap:var(--space-3);align-items:center;justify-content:space-between;padding:var(--space-3) 0}
-    .brand{display:flex;align-items:center;gap:var(--space-2);font-weight:800;letter-spacing:.2px}
-    .badge{font-size:12px;color:var(--muted);border:1px solid #26325a;padding:6px 8px;border-radius:999px}
-    .subnav{display:flex;gap:var(--space-2);flex-wrap:wrap;justify-content:center;padding:0 0 var(--space-3) 0}
-    .subnav a{padding:8px 12px;border-radius:999px;border:1px solid #22305a;background:rgba(255,255,255,.02)}
-    .subnav a:hover{background:#0f1734}
-
-    /* Sections */
-    main{counter-reset: section}
-    section{scroll-margin-top:88px}
-    .section{padding:var(--space-6) 0}
-    .section-header{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:var(--space-5)}
-    .section-kicker{color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-    .section-title{font-size:clamp(26px,3.4vw,36px);margin:6px 0 0 0;line-height:1.15;position:relative}
-    .section-title::before{counter-increment:section;content:counter(section, decimal-leading-zero)" · ";color:var(--accent);font-weight:600}
-    .section-desc{color:var(--muted);max-width:700px}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);align-items:center;padding:var(--space-6) 0}
-    .hero h1{font-size:clamp(30px,4vw,44px);margin:0 0 6px 0;line-height:1.1}
-    .hero p{color:var(--muted);font-size:clamp(15px,1.8vw,18px)}
-    .hero img{width:100%;border-radius:18px;aspect-ratio:4/3;object-fit:cover}
-
-    /* Cards & grids */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));border:1px solid #1a2240;border-radius:var(--radius);padding:var(--space-4)}
-    .card:hover{box-shadow:0 10px 30px rgba(0,0,0,.25), inset 0 0 0 1px #22305a}
-    .grid{display:grid;gap:var(--space-3)}
-    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    @media (max-width: 960px){.hero{grid-template-columns:1fr}.grid-3,.grid-2{grid-template-columns:1fr}}
-
-    /* UI bits */
-    h3{margin:10px 0 6px 0;font-size:18px}
-    .kpis{display:flex;gap:var(--space-3);flex-wrap:wrap}
-    .kpi{background:#0e1630;border:1px solid #1b2753;border-radius:14px;padding:14px 16px;min-width:150px}
-    .kpi b{font-size:20px}
-    .chips{display:flex;flex-wrap:wrap;gap:10px}
-    .chip{padding:8px 12px;border:1px solid #22305a;border-radius:999px;color:#cfe0ff;background:#0d1631}
-    .btn{display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(180deg,#173a6a,#122a4c);border:1px solid #204777;color:#fff;text-decoration:none;box-shadow:0 4px 18px rgba(13,79,170,.25)}
-    .btn:hover{transform:translateY(-1px)}
-    .muted{color:var(--muted)}
-    .timeline{border-left:2px solid #22305a;padding-left:16px;margin-left:6px}
-    .timeline .item{margin:14px 0}
-
-    /* Footer & helpers */
-    .footer{margin:var(--space-6) 0 var(--space-7);color:var(--muted);text-align:center}
-    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{left:12px;top:12px;width:auto;height:auto;background:#122a4c;color:#fff;padding:8px 12px;border-radius:8px}
-
-    /* Print */
-    @media print{header{position:static}.btn{display:none}.chip{border-color:#ccc}.card{break-inside:avoid}}
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Purnima Adhikari",
-    "jobTitle": "Student",
-    "url": "https://padhikari26.github.io/purnima_adhikari/",
-    "email": "mailto:purnima.adhikari820@gmail.com",
-    "sameAs": [
-      "https://github.com/padhikari26",
-      "https://www.linkedin.com/in/purnima-adhikari/"
-    ]
-  }
-  </script>
-</head>
-<body>
+  <link rel="stylesheet" href="/padhikari_portfolio/assets/css/style.css" />
+  <script defer src="/padhikari_portfolio/assets/js/main.js"></script>
+  <meta name="description" content="About Purnima Adhikari — CS/AI focused student with projects in ML, cybersecurity, and data science." />
+  </head><body>
   <a class="skip-link" href="#main">Skip to content</a>
+  
+  
+  <!-- Header include -->
+  <!-- paste the Shared header snippet here -->
   <header>
     <div class="container">
-      <div class="topbar">
-        <div class="brand">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3.5 6.5L22 9l-5 4 1.5 7L12 16l-6.5 4L7 13 2 9l6.5-.5L12 2z" stroke="#64b5ff"/></svg>
-          <span>Purnima Adhikari</span>
-          <span class="badge">CS/AI Applicant</span>
-        </div>
-      </div>
-      <nav class="subnav" aria-label="Section navigation">
-        <a href="#about">About</a>
-        <a href="#statement">Statement</a>
-        <a href="#projects">Projects</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#activities">Activities</a>
-        <a href="#coursework">Coursework</a>
-        <a href="#resume">Résumé</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <div class="topbar">
+    <a class="brand" href="/padhikari_portfolio/">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3.5 6.5L22 9l-5 4 1.5 7L12 16l-6.5 4L7 13 2 9l6.5-.5L12 2z" stroke="var(--accent)"/></svg>
+    <span>Purnima Adhikari</span>
+    <span class="badge">CS/AI Applicant</span>
+    </a>
+    <div class="nav">
+    <a href="/padhikari_portfolio/">Home</a>
+    <a href="/padhikari_portfolio/about.html">About</a>
+    <div class="menu" aria-expanded="false">
+    <button aria-haspopup="true" aria-expanded="false">Dashboard ▾</button>
+    <div role="menu" aria-label="Pages">
+    <a href="/padhikari_portfolio/projects/">Projects</a>
+    <a href="/padhikari_portfolio/achievements/">Achievements</a>
+    <a href="/padhikari_portfolio/activities/">Activities</a>
+    <a href="/padhikari_portfolio/coursework/">Coursework</a>
+    <a href="/padhikari_portfolio/resume/">Résumé</a>
+    <a href="/padhikari_portfolio/contact/">Contact</a>
     </div>
-  </header>
-
+    </div>
+    <button id="theme-toggle" title="Toggle light/dark">🌓</button>
+    </div>
+    
+    
+    <!-- Mobile: hamburger + drawer -->
+    <label class="hamburger" for="drawer-toggle">☰ Menu</label>
+    <input id="drawer-toggle" type="checkbox" />
+    <nav class="drawer" aria-label="Mobile navigation">
+    <div class="drawer-head">
+    <strong>Navigation</strong>
+    <label for="drawer-toggle">✕</label>
+    </div>
+    <a href="/padhikari_portfolio/">Home</a>
+    <a href="/padhikari_portfolio/about.html">About</a>
+    <a href="/padhikari_portfolio/projects/">Projects</a>
+    <a href="/padhikari_portfolio/achievements/">Achievements</a>
+    <a href="/padhikari_portfolio/activities/">Activities</a>
+    <a href="/padhikari_portfolio/coursework/">Coursework</a>
+    <a href="/padhikari_portfolio/resume/">Résumé</a>
+    <a href="/padhikari_portfolio/contact/">Contact</a>
+    <a href="#" id="mobile-theme">Toggle theme</a>
+    </nav>
+    <script>document.addEventListener('click',e=>{if(e.target&&e.target.id==='mobile-theme'){e.preventDefault();document.documentElement.classList.toggle('light');localStorage.setItem('theme',document.documentElement.classList.contains('light')?'light':'dark');}})</script>
+    </div>
+    </div>
+    </header>
+  
   <main id="main" class="container">
-    <!-- HERO -->
-    <section id="about" class="hero">
-      <div class="card">
-        <h1>Hi, I’m Purnima — I turn complex data into intelligent solutions.</h1>
-        <p>I’m a senior at <strong>Cumberland Valley High School</strong> passionate about <strong>Computer Science</strong>, <strong>AI/Machine Learning</strong>, and <strong>Cybersecurity</strong>. I build applications that solve real-world problems, from optimizing logistics to securing digital assets. I’m applying to CS programs for Fall 2026.</p>
-        <div class="kpis" aria-label="Key highlights">
-          <div class="kpi"><b>1</b><br><span class="muted">Cyber Camp Completed</span></div>
-          <div class="kpi"><b>4</b><br><span class="muted">Open‑source Projects</span></div>
-        </div>
-        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn" href="#projects">Explore Projects</a>
-          <a class="btn" href="#statement">Read My Statement</a>
-          <a class="btn" href="https://github.com/padhikari26" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Profile illustration placeholder" />
-        <p class="muted" style="margin-top:10px">Use this space for a professional headshot or a collage of your best project screenshots.</p>
-      </div>
-    </section>
-
-    <!-- PERSONAL STATEMENT -->
-    <section id="statement" class="section">
-      <div class="section-header">
-        <div class="section-kicker">Application materials</div>
-        <h2 class="section-title">Personal Statement</h2>
-        <p class="section-desc">A concise, readable statement for admissions reviewers. Keep it to ~150–250 words.</p>
-      </div>
-      <div class="card">
-        <p>My interest in technology began when I realized the power of <strong>algorithms to optimize</strong>, whether it’s a logistics problem for the Robotics team or an attempt to uncover patterns in large datasets. This led me to pursue rigorous coursework in <strong>AP Calculus BC</strong> and <strong>Linear Algebra</strong> alongside advanced <strong>Data Structures</strong>.</p>
-        <p>I’m particularly excited by the intersection of <strong>AI/ML</strong> and its application in <strong>Cybersecurity</strong>. The ability to preemptively defend systems and secure data is a challenge I’ve explored in my <strong>Cyber Camp</strong> and various open‑source projects. I’m eager to bring this problem‑solving mindset and technical foundation to a rigorous college environment where I can contribute to research from day one.</p>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <div class="section-header">
-        <div class="section-kicker">Work</div>
-        <h2 class="section-title">Selected Projects</h2>
-        <p class="section-desc">Three highlights with clear impact. Link to your GitHub for deeper dives.</p>
-      </div>
-      <div class="grid grid-3" role="list">
-        <article class="card" role="listitem">
-          <h3>ThreatModel AI</h3>
-          <p class="muted">Machine Learning for real‑time network anomaly detection and threat scoring.</p>
-          <p><strong>Tech:</strong> Python, Scikit‑learn, TensorFlow. <strong>Highlight:</strong> 94% detection accuracy.</p>
-          <p><a href="https://github.com/username/threatmodel-ai" target="_blank" rel="noopener">Source</a></p>
-        </article>
-        <article class="card" role="listitem">
-          <h3>GeoData Analysis Platform</h3>
-          <p class="muted">Interactive tool for exploring geo‑spatial public health data.</p>
-          <p><strong>Tech:</strong> Python (Pandas/Matplotlib), Streamlit. <strong>Impact:</strong> Found correlations between air quality and health metrics.</p>
-          <p><a href="https://github.com/username/geodata-analysis" target="_blank" rel="noopener">Source</a> · <a href="#" aria-disabled="true">Live demo</a></p>
-        </article>
-        <article class="card" role="listitem">
-          <h3>Robotics Scheduler</h3>
-          <p class="muted">Optimizes practice rotations and mentor coverage with constraints.</p>
-          <p><strong>Tech:</strong> Python + OR‑Tools. <strong>Result:</strong> 15% more driver practice time.</p>
-          <p><a href="https://github.com/username/robotics-scheduler" target="_blank" rel="noopener">Source</a></p>
-        </article>
-      </div>
-      <div style="margin-top: 24px; text-align: center;">
-        <a class="btn" href="https://github.com/padhikari26?tab=repositories" target="_blank" rel="noopener">View All GitHub Repositories</a>
-      </div>
-    </section>
-
-    <!-- ACHIEVEMENTS -->
-    <section id="achievements" class="section">
-      <div class="section-header">
-        <div class="section-kicker">Recognition</div>
-        <h2 class="section-title">Awards & Achievements</h2>
-        <p class="section-desc">Highlights and at‑a‑glance stats.</p>
-      </div>
-      <div class="grid grid-2">
-        <div class="card">
-          <ul>
-            <li>1st Place, City Hack 2025 (Smart Transit)</li>
-            <li><strong>National Cyber Camp 2025</strong> Participant (1‑Week Intensive)</li>
-            <li>Honorable Mention, Math Olympiad (AIME Qualifier)</li>
-            <li>USACO Bronze, top 1% (Jan 2025)</li>
-            <li>AP Scholar with Distinction (5s: CSA, CSP, Calc BC)</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">Stats at a glance</h3>
-          <div class="chips">
-            <span class="chip">GPA: 3.92/4.0 (UW)</span>
-            <span class="chip">SAT: 1560</span>
-            <span class="chip">Top 10% class rank</span>
-            <span class="chip">100+ service hours</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ACTIVITIES -->
-    <section id="activities" class="section">
-      <div class="section-header">
-        <div class="section-kicker">Leadership</div>
-        <h2 class="section-title">Extracurriculars & Leadership</h2>
-        <p class="section-desc">Roles, scope, and outcomes.</p>
-      </div>
-      <div class="timeline">
-        <div class="item">
-          <h3>Robotics Team • <span class="muted">Captain, Programming Lead</span></h3>
-          <p class="muted">2023–Present • Mentored 12 members; designed autonomous path‑planning and logging pipeline.</p>
-        </div>
-        <div class="item">
-          <h3>1‑Week Intensive Cyber Camp • <span class="muted">Intensive Training</span></h3>
-          <p class="muted">Summer 2025 • Focus on network defense, penetration testing basics, and digital forensics. Applied skills in a simulated CTF environment.</p>
-        </div>
-        <div class="item">
-          <h3>Girls Who Code Club • <span class="muted">Founder</span></h3>
-          <p class="muted">2024–Present • Weekly lessons for 30+ attendees; built a community resource website.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- COURSEWORK -->
-    <section id="coursework" class="section">
-      <div class="section-header">
-        <div class="section-kicker">Academics</div>
-        <h2 class="section-title">Coursework & Skills</h2>
-        <p class="section-desc">Relevant classes and technologies.</p>
-      </div>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>Relevant Courses</h3>
-          <ul>
-            <li>AP Computer Science A • AP Computer Science Principles</li>
-            <li><strong>AP Calculus BC</strong> • <strong>AP Statistics</strong> • <strong>Linear Algebra (Dual‑enroll)</strong></li>
-            <li>Data Structures (Community College) • <strong>Intro to Machine Learning (MOOC)</strong></li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Skills</h3>
-          <div class="chips" aria-label="Skills list">
-            <span class="chip"><strong>Python</strong> (ML/Data)</span>
-            <span class="chip">Java</span>
-            <span class="chip">SQL</span>
-            <span class="chip"><strong>TensorFlow/PyTorch</strong></span>
-            <span class="chip"><strong>Pandas</strong> / Data Analysis</span>
-            <span class="chip"><strong>React/JS</strong></span>
-            <span class="chip">Git/GitHub</span>
-            <span class="chip">Linux/Shell</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESUME -->
-    <section id="resume" class="section">
-      <div class="section-header">
-        <div class="section-kicker">Documents</div>
-        <h2 class="section-title">Résumé</h2>
-        <p class="section-desc">Place a file named <code>resume.pdf</code> in your repository root to enable this button.</p>
-      </div>
-      <div class="card" style="text-align:center">
-        <p><a class="btn" href="resume.pdf" download>Download Résumé (PDF)</a></p>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="section-header">
-        <div class="section-kicker">Get in touch</div>
-        <h2 class="section-title">Contact</h2>
-        <p class="section-desc">I’m available to discuss my work, future research, or opportunities in CS and AI.</p>
-      </div>
-      <div class="card" style="text-align:center">
-        <p><b>Email:</b> <a href="mailto:purnima.adhikari820@gmail.com">purnima.adhikari820@gmail.com</a> · <b>GitHub:</b> <a href="https://github.com/padhikari26" target="_blank" rel="noopener">@padhikari26</a> · <b>LinkedIn:</b> <a href="https://linkedin.com/in/purnima-adhikari/" target="_blank" rel="noopener">Profile</a></p>
-      </div>
-    </section>
-
-    <!-- REVIEWER NOTES -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-kicker">For reviewers</div>
-        <h2 class="section-title">Notes for Reviewers</h2>
-      </div>
-      <div class="card">
-        <ul>
-          <li><strong>Distinct Design:</strong> Custom, responsive layout built for speed and clarity.</li>
-          <li><strong>Code Access:</strong> Projects link to public repositories on GitHub.</li>
-          <li><strong>Accessibility:</strong> Semantic HTML, clear contrast, and keyboard‑friendly navigation.</li>
-        </ul>
-      </div>
-    </section>
-
-    <p class="footer">© <span id="year"></span> Purnima Adhikari</p>
+  <section class="section" style="padding-top:56px;">
+  <div class="grid grid-2" style="align-items:center;">
+  <div class="card">
+  <h1>Hi, I’m Purnima — I turn complex data into intelligent solutions.</h1>
+  <p class="muted">I’m a senior at <strong>Cumberland Valley High School</strong> passionate about <strong>Computer Science</strong>, <strong>AI/Machine Learning</strong>, and <strong>Cybersecurity</strong>. I build applications that solve real-world problems, from optimizing logistics to securing digital assets. I’m applying to CS programs for Fall 2026.</p>
+  <div class="kpis" aria-label="Key highlights" style="margin-top:12px;">
+  <div class="kpi"><b>1</b><br><span class="muted">Cyber Camp Completed</span></div>
+  <div class="kpi"><b>4</b><br><span class="muted">Open‑source Projects</span></div>
+  </div>
+  <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+  <a class="btn" href="/padhikari_portfolio/projects/">Explore Projects</a>
+  <a class="btn" href="/padhikari_portfolio/resume/">View Résumé</a>
+  </div>
+  </div>
+  <div class="card">
+  <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Headshot placeholder" style="border-radius:18px;aspect-ratio:4/3;object-fit:cover"/>
+  <p class="muted" style="margin-top:10px">Replace with a professional headshot when ready.</p>
+  </div>
+  </div>
+  
+  
+  <div class="section-header" style="margin-top:36px;">
+  <div class="section-kicker">Personal Statement</div>
+  <h2 class="section-title">Why Computer Science</h2>
+  <p class="section-desc">~200–300 words works best for reviewer attention.</p>
+  </div>
+  <div class="card">
+  <p>My interest in technology began when I realized the power of <strong>algorithms to optimize</strong>, whether it’s a logistics problem for the Robotics team or an attempt to uncover patterns in large datasets. This led me to pursue rigorous coursework in <strong>AP Calculus BC</strong> and <strong>Linear Algebra</strong> alongside advanced <strong>Data Structures</strong>.</p>
+  <p>I’m particularly excited by the intersection of <strong>AI/ML</strong> and its application in <strong>Cybersecurity</strong>. The ability to preemptively defend systems and secure data is a challenge I’ve explored in my <strong>Cyber Camp</strong> and various open‑source projects. I’m eager to bring this problem‑solving mindset and technical foundation to a rigorous college environment where I can contribute to research from day one.</p>
+  </div>
+  </section>
   </main>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  
+  
+  <footer>© <span id="year"></span> Purnima Adhikari</footer>
+  </body></html>
