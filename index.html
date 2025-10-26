@@ -1,110 +1,125 @@
-<!DOCTYPE html><html lang="en"><head>
-<script defer src="/padhikari_portfolio/assets/js/main.js"></script>
-<meta name="description" content="Highlights from Purnima Adhikari’s CS/AI portfolio: featured projects, awards, quick stats, and résumé." />
-</head><body>
-<a class="skip-link" href="#main">Skip to content</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Purnima Adhikari — CS/AI Applicant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-
-<!-- Header include -->
-<!-- paste the Shared header snippet here -->
-<header>
+  <header>
     <div class="container">
-    <div class="topbar">
-    <a class="brand" href="/padhikari_portfolio/">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3.5 6.5L22 9l-5 4 1.5 7L12 16l-6.5 4L7 13 2 9l6.5-.5L12 2z" stroke="var(--accent)"/></svg>
-    <span>Purnima Adhikari</span>
-    <span class="badge">CS/AI Applicant</span>
-    </a>
-    <div class="nav">
-    <a href="/padhikari_portfolio/">Home</a>
-    <a href="/padhikari_portfolio/about.html">About</a>
-    <div class="menu" aria-expanded="false">
-    <button aria-haspopup="true" aria-expanded="false">Dashboard ▾</button>
-    <div role="menu" aria-label="Pages">
-    <a href="/padhikari_portfolio/projects/">Projects</a>
-    <a href="/padhikari_portfolio/achievements/">Achievements</a>
-    <a href="/padhikari_portfolio/activities/">Activities</a>
-    <a href="/padhikari_portfolio/coursework/">Coursework</a>
-    <a href="/padhikari_portfolio/resume/">Résumé</a>
-    <a href="/padhikari_portfolio/contact/">Contact</a>
+      <div class="topbar">
+        <a class="brand" href="/">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3.5 6.5L22 9l-5 4 1.5 7L12 16l-6.5 4L7 13 2 9l6.5-.5L12 2z" stroke="var(--accent)"/></svg>
+          <span>Purnima Adhikari</span>
+          <span class="badge">CS/AI Applicant</span>
+        </a>
+
+        <div class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <div class="menu" aria-expanded="false">
+            <button aria-haspopup="true" aria-expanded="false">Dashboard ▾</button>
+            <div role="menu" aria-label="Pages">
+              <a href="projects/">Projects</a>
+              <a href="achievements/">Achievements</a>
+              <a href="activities/">Activities</a>
+              <a href="coursework/">Coursework</a>
+              <a href="resume/">Résumé</a>
+              <a href="contacts/">Contact</a>
+            </div>
+          </div>
+          <button id="theme-toggle" title="Toggle light/dark">🌓</button>
+        </div>
+
+        <label class="hamburger" for="drawer-toggle">☰ Menu</label>
+        <input id="drawer-toggle" type="checkbox" />
+        <nav class="drawer" aria-label="Mobile navigation">
+          <div class="drawer-head">
+            <strong>Navigation</strong>
+            <label for="drawer-toggle">✕</label>
+          </div>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects/">Projects</a>
+          <a href="achievements/">Achievements</a>
+          <a href="activities/">Activities</a>
+          <a href="coursework/">Coursework</a>
+          <a href="resume/">Résumé</a>
+          <a href="contacts/">Contact</a>
+          <a href="#" id="mobile-theme">Toggle theme</a>
+        </nav>
+      </div>
     </div>
-    </div>
-    <button id="theme-toggle" title="Toggle light/dark">🌓</button>
-    </div>
-    
-    
-    <!-- Mobile: hamburger + drawer -->
-    <label class="hamburger" for="drawer-toggle">☰ Menu</label>
-    <input id="drawer-toggle" type="checkbox" />
-    <nav class="drawer" aria-label="Mobile navigation">
-    <div class="drawer-head">
-    <strong>Navigation</strong>
-    <label for="drawer-toggle">✕</label>
-    </div>
-    <a href="/padhikari_portfolio/">Home</a>
-    <a href="/padhikari_portfolio/about.html">About</a>
-    <a href="/padhikari_portfolio/projects/">Projects</a>
-    <a href="/padhikari_portfolio/achievements/">Achievements</a>
-    <a href="/padhikari_portfolio/activities/">Activities</a>
-    <a href="/padhikari_portfolio/coursework/">Coursework</a>
-    <a href="/padhikari_portfolio/resume/">Résumé</a>
-    <a href="/padhikari_portfolio/contact/">Contact</a>
-    <a href="#" id="mobile-theme">Toggle theme</a>
-    </nav>
-    <script>document.addEventListener('click',e=>{if(e.target&&e.target.id==='mobile-theme'){e.preventDefault();document.documentElement.classList.toggle('light');localStorage.setItem('theme',document.documentElement.classList.contains('light')?'light':'dark');}})</script>
-    </div>
-    </div>
-    </header>
+  </header>
 
-<main id="main" class="container">
-<section class="section" style="padding-top:56px;">
-<div class="section-header">
-<div class="section-kicker">Highlights</div>
-<h1 class="section-title">Welcome — quick look at my work</h1>
-<p class="section-desc">A few standout items admissions officers care about: recent projects, recognition, and impact.</p>
-</div>
+  <main id="main" class="container">
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Highlights</div>
+        <h1 class="section-title">Welcome — quick look at my work</h1>
+        <p class="section-desc">A few standout items admissions officers care about: recent projects, recognition, and impact.</p>
+      </div>
 
+      <div class="grid grid-2" style="align-items:start;margin-top:18px;">
+        <div class="card">
+          <h3>ThreatModel AI</h3>
+          <p class="muted">Real-time anomaly detection. <strong>94% accuracy</strong>.</p>
+          <p><a href="projects/">View project</a></p>
+        </div>
+        <div class="card">
+          <h3>City Hack 1st Place</h3>
+          <p class="muted">Smart Transit prototype recognized at City Hack 2025.</p>
+          <p><a href="achievements/">See awards</a></p>
+        </div>
+      </div>
 
-<!-- Featured strip -->
-<div class="grid grid-3">
-<article class="card">
-<h3>ThreatModel AI</h3>
-<p class="muted">Real‑time anomaly detection. <strong>94% accuracy</strong>.</p>
-<p><a class="btn" href="/padhikari_portfolio/projects/#threatmodel">View project</a></p>
-</article>
-<article class="card">
-<h3>City Hack 1st Place</h3>
-<p class="muted">Smart Transit prototype recognized at City Hack 2025.</p>
-<p><a class="btn" href="/padhikari_portfolio/achievements/">See awards</a></p>
-</article>
-<article class="card">
-<h3>Robotics Scheduler</h3>
-<p class="muted">Practice optimizer. <strong>+15% driver time</strong>.</p>
-<p><a class="btn" href="/padhikari_portfolio/projects/#scheduler">View project</a></p>
-</article>
-</div>
+      <!-- Dashboard preview: quick links and KPI row -->
+      <div class="section-header" style="margin-top:28px;">
+        <h2 class="section-title">Dashboard</h2>
+        <p class="section-desc">Quick navigation and highlights to share with admission officers.</p>
+      </div>
 
+      <div class="grid" style="grid-template-columns:1fr;gap:12px;margin-top:12px;">
+        <div class="card" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+          <div style="flex:1;min-width:200px">
+            <h3 style="margin:0 0 6px 0">Key Highlights</h3>
+            <ul>
+              <li><strong>Projects:</strong> ML anomaly detection, Smart Transit</li>
+              <li><strong>Recognition:</strong> City Hack 1st, Cyber Camp participant</li>
+              <li><strong>Skills:</strong> Python, TensorFlow, cybersecurity, C++</li>
+            </ul>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <div class="chip">GPA 3.92</div>
+            <div class="chip">SAT 1560</div>
+            <div class="chip">USACO Bronze</div>
+          </div>
+        </div>
 
-<!-- Quick stats + Resume CTA -->
-<div class="grid grid-2" style="margin-top:24px;align-items:stretch;">
-<div class="card">
-<h3>At a glance</h3>
-<div class="chips">
-<span class="chip">GPA 3.92/4.0 UW</span>
-<span class="chip">SAT 1560</span>
-<span class="chip">USACO Bronze (Top 1%)</span>
-<span class="chip">100+ Service Hours</span>
-</div>
-</div>
-<div class="card" style="text-align:center">
-<h3>Résumé</h3>
-<p class="muted">Preview and download my current résumé.</p>
-<p><a class="btn" href="/padhikari_portfolio/resume/">Open résumé</a></p>
-</div>
-</div>
-</section>
-</main>
+        <div class="card">
+          <h3 style="margin-top:0">Portfolio Links</h3>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="projects/">Projects</a>
+            <a class="btn" href="achievements/">Achievements</a>
+            <a class="btn" href="activities/">Activities</a>
+            <a class="btn" href="contacts/">Contact</a>
+            <a class="btn" href="about.html">About</a>
+            <a class="btn" href="resume/">Résumé</a>
+          </div>
+        </div>
+      </div>
 
+    </section>
+  </main>
 
-<footer>© <span id="year"></span> Purnima Adhikari</footer>
-</body></html>
+  <footer>© <span id="year"></span> Purnima Adhikari</footer>
+</body>
+</html>
